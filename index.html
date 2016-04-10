@@ -7,7 +7,7 @@
 
 		<script type="text/javascript" src="js/ICanHaz.js"></script>
 		<script type="text/javascript" src='js/jquery.js'></script>
-		<script type="text/javascript" src='js/site.js'></script>
+		<script type="text/javascript" src='js/mine.js'></script>
 		<script type="text/javascript" src='js/tabletop1.3.4.js'></script>
 
 		<link rel="shortcut icon" href="https://raw.githubusercontent.com/jlord/lending-library/gh-pages/favico.png"/>
@@ -38,7 +38,11 @@
 			<span id="showAvailable" class="sml-button">Show Available</span>
 		</div>
 		-->
-		<div id="tools" class="container"><span class="flash animated">LOADING...</span></div>
+		<div id="tasks" class="container"><span class="flash animated">LOADING mine...</span></div>
+
+		<!-- fOR dEBUGGING YOW
+		<div id="tools" class="container"><span class="flash animated">LOADING site...</span></div>
+		-->
 
 		<footer class="container">
 			<hr/>
@@ -48,7 +52,7 @@
 			</p>
 		</footer>
 
-
+		<!-- script for site A.K.A. DEBUGGING 
 		<script id="tools" type="text/html">
 		{{#rows}}
 		<div id="{{rowNumber}}" class="tool-box {{#checkedout}}not-{{/checkedout}}available">
@@ -69,12 +73,42 @@
 		</div>
 		{{/rows}}
 		</script>
+		-->
+
+		<!-- script for mine -->
+		<script id="tasks" type="text/html">
+		{{#rows}}
+		<div id="{{rowNumber}}" class="task-box {{#done}}not-{{/done}}done">
+			<span class="task-box-name">{{task}}</span>
+			<div class="tool-box-bottom {{rowNumber}}">
+				{{#done}}<span class="task-box-done">DONE!</span>{{/done}}
+				{{^done}}<span class="tool-box-borrow btn">DONE?</span></a>{{/done}}
+				<ul>
+					<li><small>WHO: </small></li>
+					<li>{{who}}</li>
+					<li><small>DEPENDENCIES: </small></li>
+					<li>{{dependencies}}</li>
+
+					{{#tooldetails}}
+					<li><small>NOTES : </small>{{tooldetails}}</li>
+					{{/tooldetails}}
+
+					{{#taskimg}}
+					<li></li>
+					{{/taskimg}}
+				</ul>
+			</div>
+		</div>
+		{{/rows}}
+		</script>
 
 		<script type="text/javascript">
 		  document.addEventListener('DOMContentLoaded', function() {
 	      var URL = "1wFGGXDpqD3Yr8g6qFEnWCT9qdUdKodi9kW3l1XJQnU4"
-	      Tabletop.init( { key: URL, callback: drawToolBox, simpleSheet: true } )
+	      Tabletop.init( { key: URL, callback: drawTaskBox, simpleSheet: true } )
 	    })
 		</script>
+
+		<!-- real copy use this https://docs.google.com/spreadsheets/d/1AHl8RUc9xCVVYQLUNAUW2de9Zly5Gd5GZaxEVewf7W8/pubhtml -->
 	</body>
 </html>
