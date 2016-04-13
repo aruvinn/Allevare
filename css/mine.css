@@ -6,6 +6,7 @@ h1{font-family: "Josefin Sans", Helvetica, Arial, sans-serif; font-size: 5em; co
 h2{font-family: "Open Sans", Helvetica, Arial, sans-serif; font-size: 1.2em; font-weight: 300; color: #808080; margin: 0px 0px 30px 0px;}
 h3{}
 
+/* Styling for move-in dates */
 ul.cancel-dates {list-style: none; margin: 0px; padding: 0px; color: #808080;}
 ul.cancel-dates li{ 
 	display: inline; font-size: 1em; font-style: italic; letter-spacing: .1em; text-transform: uppercase; 
@@ -21,35 +22,45 @@ ul.cancel-dates li.planned {
   border: solid #00C012 1px;
   text-decoration: none;}
 
+footer {
+  font-weight:300;
+  font-size: 0.75em;
+}
+
 /*CONTAINERSSSSSSSSSSSSSS*/
 .container {max-width: 870px; margin: 0px auto; overflow: auto; padding: 30px 0px;}
 
 /*DEM BOXESSSSSSSSSSS*/
-
 #tasks{-webkit-column-count:3; -webkit-column-gap : 16px; -webkit-column-width: 250px; -moz-column-count:3;
   -moz-column-gap : 16px; -moz-column-width: 250px;}
 .task-box { background: #06AB9A; color: #20D5C6; padding: 12px; margin-bottom: 16px; box-sizing: border-box;
    -mox-box-sizing:border-box; -webkit-column-break-inside:avoid; -moz-column-break-inside:avoid;
    display: table; width: 100%;}
-.task-box.done {background: #ff4545; color: #fff;}
+/* Done mestinya not done, lol rapihin kapan2 */
+.task-box.done {background: #ff4545; color: #fff;} 
 .task-box:hover {opacity: .50;}
 .selected-task {border-color: #9B9A9A; opacity: .75;}
 .task-box ul {list-style: none; margin: 20px 0px 0px 0px; padding: 0px;}
 .task-box li {margin: 10px 0px;}
-
+.task-box li.header { font-style: italic; font-size: 0.8em; }
 .task-box-name { display: block; font-size: 1.2em; padding: 10px 0; text-align: center; width: 100%;
   cursor: pointer; font-weight: 700;}
 
+.task-box-bottom {display: none; width: 100%;}
 
-.tool-box-bottom {display: none; width: 100%;}
+.task-box-done {display: block; box-sizing: border-box; -moz-box-sizing: border-box; position: relative;
+  background-color: #B6B6B6; color: #E0E0DF; padding: 4px 0px; letter-spacing: .08em; font-weight: 900;
+  text-align: center; width: 100%; margin: 12px 0px; border: 1px solid #B6B6B6;}
+
+.task-box:nth-child(1) {margin-top: 0;}
+
+/* NOT USED YET BUT MIGHT NEED THESE SHIT
+
 
 
 .tool-box a {border-color: #9B9A9A;}
 
 .tool-box.done a {border-color: #fff;}
-.tool-box:nth-child(1) {margin-top: 0;}
-
-
 
 
 .tool-box-borrow {display: block; box-sizing: border-box; -mox-box-sizing: border-box; position: relative;
@@ -57,10 +68,6 @@ ul.cancel-dates li.planned {
   text-align: center; width: 100%; margin: 12px 0px; cursor: pointer; border: 1px solid transparent;}
 .tool-box-borrow:hover { border: 1px solid #55b6ff; color: #fff; background-color: #55b6ff;}
 
-.task-box-done {display: block; box-sizing: border-box; -moz-box-sizing: border-box; position: relative;
-  background-color: #B6B6B6; color: #E0E0DF; padding: 4px 0px; letter-spacing: .08em; font-weight: 900;
-  text-align: center; width: 100%; margin: 12px 0px; border: 1px solid #B6B6B6;}
 
-
-
+*/
 

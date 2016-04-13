@@ -35,11 +35,11 @@ $(document).on('keyup', '#toolSearch', function(e) {
 $(document).on( 'click', '.task-box-name', function(e) {
   var rowNumber = $(this).closest("div").attr("id")
   if ($(this).closest('div').hasClass('selected-task')) {
-    $('.tool-box-bottom' + '.' + rowNumber).css('display', 'none')
+    $('.task-box-bottom' + '.' + rowNumber).css('display', 'none')
     $(this).closest('div').removeClass('selected-task')
   }
   else {
-    $('.tool-box-bottom' + '.' + rowNumber).css('display', 'inherit')
+    $('.task-box-bottom' + '.' + rowNumber).css('display', 'inherit')
     $(this).closest('div').addClass('selected-tool')
   }
 })

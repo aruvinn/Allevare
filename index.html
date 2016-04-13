@@ -10,7 +10,7 @@
 		<script type="text/javascript" src='js/mine.js'></script>
 		<script type="text/javascript" src='js/tabletop1.3.4.js'></script>
 
-		<link rel="shortcut icon" href="https://raw.githubusercontent.com/jlord/lending-library/gh-pages/favico.png"/>
+		<link rel="shortcut icon" href="favico.png"/>
 		<link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,700,300' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
 		<link media="screen" rel="stylesheet" type="text/css" href="css/mine.css">
@@ -29,26 +29,19 @@
 				<li class="canceled">Jan</li>				
 			</ul>
 		</header>
-		<!--
-		<div id="filters" class="container">
-			
-			<input id="toolSearch" type="search" placeholder="hammer.."></input>
-			<span class="clear sml-button">Clear</span>
-			
-			<span id="showAvailable" class="sml-button">Show Available</span>
-		</div>
-		-->
+
+		<!-- Loading animation -->
 		<div id="tasks" class="container"><span class="flash animated">LOADING mine...</span></div>
 
 		<!-- fOR dEBUGGING YOW
 		<div id="tools" class="container"><span class="flash animated">LOADING site...</span></div>
 		-->
 
-		<footer class="container">
+		<footer class="container footer">
 			<hr/>
-			<p>Kapan Allevare Selesai is a personal project created by Alvina Atmadja to track the progress of her parent's soon-to-be-but-not-quite-yet-ready-home-since-forever, powered by <a href="https://github.com/jlord/lending-library">Lending Library.</a></p>
+			<p>Kapan Allevare Selesai is an issue tracker created by Alvina Atmadja as a personal project, powered by <a href="https://github.com/jlord/lending-library">Lending Library.</a></p>
 			<p class="links">
-				<a href="http://www.alvinaatmadja.com/" alt="homepage">my portfolio site</a>
+				<a href="http://www.alvinaatmadja.com/" alt="homepage">[my portfolio site]</a>
 			</p>
 		</footer>
 
@@ -80,22 +73,30 @@
 		{{#rows}}
 		<div id="{{rowNumber}}" class="task-box {{#done}}not-{{/done}}done">
 			<span class="task-box-name">{{task}}</span>
+			<hr/>
 			<div class="tool-box-bottom {{rowNumber}}">
+				<!-- DONE BUTTON/ STATUS HERE, how to map back to sheet? 
 				{{#done}}<span class="task-box-done">DONE!</span>{{/done}}
 				{{^done}}<span class="tool-box-borrow btn">DONE?</span></a>{{/done}}
+				-->
 				<ul>
-					<li><small>WHO: </small></li>
+					<li class="header">LOCATION: </li>
+					<li>{{location}}</li>
+					<li class="header">WHO:</li>
 					<li>{{who}}</li>
-					<li><small>DEPENDENCIES: </small></li>
+					<li class="header">DEPENDENCIES: </li>
 					<li>{{dependencies}}</li>
 
-					{{#tooldetails}}
-					<li><small>NOTES : </small>{{tooldetails}}</li>
-					{{/tooldetails}}
+					{{#notes}}
+					<li class="header">NOTES : {{notes}}</li>
+					{{/notes}}
 
+					<!-- Not implemented yet
 					{{#taskimg}}
 					<li></li>
 					{{/taskimg}}
+					-->
+
 				</ul>
 			</div>
 		</div>
@@ -104,11 +105,12 @@
 
 		<script type="text/javascript">
 		  document.addEventListener('DOMContentLoaded', function() {
-	      var URL = "1wFGGXDpqD3Yr8g6qFEnWCT9qdUdKodi9kW3l1XJQnU4"
+	      var URL = "1AHl8RUc9xCVVYQLUNAUW2de9Zly5Gd5GZaxEVewf7W8"
 	      Tabletop.init( { key: URL, callback: drawTaskBox, simpleSheet: true } )
 	    })
 		</script>
 
+		<!-- debug use this: 1wFGGXDpqD3Yr8g6qFEnWCT9qdUdKodi9kW3l1XJQnU4 -->
 		<!-- real copy use this https://docs.google.com/spreadsheets/d/1AHl8RUc9xCVVYQLUNAUW2de9Zly5Gd5GZaxEVewf7W8/pubhtml -->
 	</body>
 </html>
